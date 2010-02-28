@@ -1,0 +1,46 @@
+Nette-LastFmRecentTracks (c) 2010 Tomáš Nedvìd (http://programator.ne2d.cz)
+
+
+
+Introduction
+------------
+
+Nette Control for receiving last 10 tracks from LastFM.
+
+LastFM API documentation: http://www.last.fm/api
+Nette Framework homepage: http://nettephp.com/
+
+Methods cachedHttpRequest and httpRequest based on: http://github.com/dg/twitter-php/blob/master/twitter.class.php
+
+
+Requirements
+------------
+
+- PHP (version 5 or better)
+- cURL extension
+- Nette Framework
+
+
+Usage
+-----
+
+Create factory using your credentials (user name)
+
+    protected function createComponentLastFm($name)
+    {
+        LastFM::$cacheDir = APP_DIR . '/temp';
+        $lfm = new LastFM($user);
+        return $lfm;
+    }
+
+Create widget
+
+    {widget lastFm}
+
+    
+Files
+-----
+README.txt               - This file.
+license.txt              - The license for this software (New BSD License).
+LastFM.php               - The core LastFM class source.
+lastfmrecenttracks.phtml - Template.
