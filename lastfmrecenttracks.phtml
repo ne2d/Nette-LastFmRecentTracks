@@ -1,13 +1,12 @@
+<h2>Last FM</h2>
 
-<h2>Last FM - {$name}</h2>
-
-<div class="main-content-right-panel-box">
+<div>
     {foreach $recenttracks->track as $t}
-    <div class="lfm">
+    <div>
         {if $t->image !=''}<a href="{$t->url}" target="_blank"><img src="{$t->image[0]}" alt="{$t->artist} - {$t->name}" width="34px" height="34px" /></a>{/if}
         {$t->artist} - <a href="{$t->url}" target="_blank">{$t->name}</a>
         <br/>
-        <span class="date">{$t->date}</span>
+        <span>{$t->date}</span>
     </div>
     {/foreach}
     <a href="http://www.last.fm/user/{$user}" target="_blank">... více zde</a>
